@@ -62,7 +62,7 @@ module.exports = {
         client_id: '1515670032095765',
         userinfo_endpoint: false,
         scope: ['public_profile', 'email'],
-        redirect_uri:'http://localhost:3000/callback'
+        redirect_uri:'https://zen-varahamihira-add358.netlify.com/callback'
       },
       google: {
         client_id: '',
