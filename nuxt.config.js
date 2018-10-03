@@ -36,6 +36,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src:'~plugins/auth.js', ssr: false },'~plugins/axios.js'
   ],
 
   /*
@@ -43,15 +44,44 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
-  /*
-  ** Axios module configuration
-  */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {url: '/user/login', method: 'post', propertyName: 'token' },
+          logout: false,
+          user: {url: '/user/user', method: 'get', propertyName: 'data'},
+        },
+        tokenRequired: true,
+        tokenType: 'Bearer'
+      },
+      facebook: {
+        client_id: '1515670032095765',
+        userinfo_endpoint: false,
+        scope: ['public_profile', 'email'],
+        redirect_uri:'http://localhost:3000/callback'
+      },
+      google: {
+        client_id: '',
+        user:false,
+        redirect_uri:'http://localhost:3000/callback'
 
+      },
+    },
+    redirect: {
+      login: '/?login=1',
+      logout: '/',
+    }
+  },
+  axios: {
+    baseURL:'api base url'
+  },
+  router: {
+    middleware: ['auth']
+  },
   /*
   ** Build configuration
   */
