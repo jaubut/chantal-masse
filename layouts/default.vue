@@ -2,7 +2,7 @@
   <div>
     <nuxt/>
     <div id="fb-root"></div>
-    <div class="fb-customerchat" attribution=setup_tool page_id="1541184722867648"></div>
+    <div class="fb-customerchat" attribution=setup_tool page_id="470093576844474"></div>
   </div>
 </template>
 
@@ -22,3 +22,4 @@ export default {
 
 <style>
 </style>
+<!-- Load Facebook SDK for JavaScript -->

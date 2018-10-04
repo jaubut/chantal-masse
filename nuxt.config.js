@@ -59,7 +59,7 @@ module.exports = {
         tokenType: 'Bearer'
       },
       facebook: {
-        client_id: '1515670032095765',
+        client_id: '470093576844474',
         userinfo_endpoint: false,
         scope: ['public_profile', 'email'],
         redirect_uri:'https://zen-varahamihira-add358.netlify.com/callback'
