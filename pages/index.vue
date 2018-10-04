@@ -1,8 +1,7 @@
 <template>
   <section class="container">
     <div>
-      <h1>allo1</h1>
-      <button @click="facebook" variant="outline-success">Facebook</button>
+      <h1>allo</h1>
       <div
         class="fb-like"
         data-share="true"
