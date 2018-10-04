@@ -3,6 +3,12 @@
     <div>
       <h1>allo1</h1>
       <button @click="facebook" variant="outline-success">Facebook</button>
+      <div
+        class="fb-like"
+        data-share="true"
+        data-width="450"
+        data-show-faces="true">
+      </div>
     </div>
   </section>
 </template>
